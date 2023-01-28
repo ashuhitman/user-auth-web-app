@@ -7,11 +7,15 @@ https://user-auth-app-gbzm.onrender.com/
 - Reactjs
   -Javascript library used to develop user interface.
 
-  Login Page:
-  <img src="https://user-images.githubusercontent.com/88100149/214437700-84e2bdb5-7493-49a5-ad97-ace2951321e7.png" width="200" height="400" />
+  Login Page: <br/>
+  <p align="center">
+  <img src="https://user-images.githubusercontent.com/88100149/214437700-84e2bdb5-7493-49a5-ad97-ace2951321e7.png" width="600" height="400" />
+  </p>
 
-  Registration Page:
-    <img src="https://user-images.githubusercontent.com/88100149/214437084-a25ad064-1b93-4cb7-9f49-2f674f662acf.png" width="200" height="400" />
+  Registration Page:<br/>
+  <p align="center">
+    <img src="https://user-images.githubusercontent.com/88100149/214437084-a25ad064-1b93-4cb7-9f49-2f674f662acf.png" width="400" height="600" />
+  </p>
   
 
 ## Backend
