@@ -1,0 +1,23 @@
+.alert {
+  background-color: #f8d7da;
+  padding: 8px 15px;
+  position: absolute;
+  top: 20px;
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 2s;
+  color: #721c24;
+  opacity: 1;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  animation: mymove 0.5s ease-in-out;
+}
+
+@keyframes mymove {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 20px;
+  }
+}

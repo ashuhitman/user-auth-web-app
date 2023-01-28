@@ -1,0 +1,47 @@
+.reg-container {
+  background-color: var(--register-bg-color);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.reg-container > form {
+  background-color: white;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: auto 20px;
+  border-top: 4px solid var(--regsiter-btn-color);
+  padding: 10px 25px;
+  width: 350px;
+}
+.reg-heading {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.reg-container > form > div {
+  margin: 20px auto;
+}
+.name-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.name-field .input-field-container {
+  width: 45%;
+}
+
+.reg-btn {
+  border: none;
+  width: 100%;
+  background-color: var(--regsiter-btn-color);
+  color: white;
+  padding: 10px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+}
