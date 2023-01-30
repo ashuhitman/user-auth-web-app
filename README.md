@@ -1,6 +1,6 @@
 # User Authentication Web App
 
-https://user-auth-app-gbzm.onrender.com/
+https://user-auth-web-app.onrender.com/
 
 ## Frontend
 
@@ -16,7 +16,6 @@ https://user-auth-app-gbzm.onrender.com/
   <p align="center">
     <img src="https://user-images.githubusercontent.com/88100149/214437084-a25ad064-1b93-4cb7-9f49-2f674f662acf.png" width="400" height="600" />
   </p>
-  
 
 ## Backend
 
