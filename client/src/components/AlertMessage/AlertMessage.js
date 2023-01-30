@@ -6,7 +6,7 @@ const AlertMessage = ({ res, setShowAlertMessage }) => {
       setShowAlertMessage(false);
     }, 3000);
   });
-  console.log(res);
+
   if (!res.isError) {
     return (
       <div

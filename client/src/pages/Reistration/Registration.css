@@ -42,6 +42,7 @@
   font-weight: bold;
   cursor: pointer;
 }
+
 input:focus {
   outline: none;
 }

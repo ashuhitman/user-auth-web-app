@@ -8,6 +8,8 @@ import AlertMessage from "../../components/AlertMessage/AlertMessage";
 
 import auth from "../../utils/auth";
 import { useNavigate } from "react-router-dom";
+import validation from "../../utils/validation";
+import { motion } from "framer-motion";
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -26,15 +28,15 @@ const Registration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const [errors, isValid] = validateForm(
+    const [isValid, errors] = validation({
       email,
       password,
       rePassword,
       firstName,
       lastName,
       gender,
-      country
-    );
+      country,
+    });
     if (isValid) {
       const digits = Math.floor(Math.random() * 9000000000) + 1000000000;
       const regId = digits.toString();
@@ -65,64 +67,6 @@ const Registration = () => {
     }
   };
 
-  const validateForm = (
-    email,
-    password,
-    rePassword,
-    firstName,
-    lastName,
-    gender,
-    country
-  ) => {
-    let isValid = true;
-    const regex = /^[a-z0-9.]{1,64}@[a-z0-9.]{1,64}$/i;
-    const errors = {};
-    if (!email) {
-      errors.email = "Email is required!";
-      isValid = false;
-    } else if (!regex.test(email)) {
-      errors.email = "This is not a valid email format!";
-      isValid = false;
-    }
-    if (!password) {
-      errors.password = "Password is required!";
-      isValid = false;
-    } else if (password.length <= 4) {
-      errors.password = "Password must be more than 4 characters";
-      isValid = false;
-    }
-    if (!rePassword) {
-      errors.rePassword = "Re entry of Password is required!";
-      isValid = false;
-    } else if (password.length > 4 && password !== rePassword) {
-      errors.rePassword = "Password are not matching";
-      isValid = false;
-    }
-    if (!firstName) {
-      errors.firstName = "First Name is required!";
-      isValid = false;
-    } else if (firstName.length < 3) {
-      errors.firstName = "First Name must be more than 2 characters";
-      isValid = false;
-    }
-    if (!lastName) {
-      errors.lastName = "Last Name is required!";
-      isValid = false;
-    } else if (lastName.length < 3) {
-      errors.lastName = "Last Name must be more than 2 characters";
-      isValid = false;
-    }
-    if (!gender) {
-      errors.gender = "Choose a gender!";
-      isValid = false;
-    }
-    if (!country || country === "0") {
-      errors.country = "Country is required!";
-      isValid = false;
-    }
-    return [errors, isValid];
-  };
-
   return (
     <div className="reg-container">
       <button style={{ border: "none" }} onClick={() => navigate("/")}>
@@ -142,7 +86,7 @@ const Registration = () => {
       ) : (
         <></>
       )}
-      <form onSubmit={handleSubmit}>
+      <motion.form onSubmit={handleSubmit}>
         <div className="reg-heading">
           Responsive Registration
           <br /> Form
@@ -254,7 +198,7 @@ const Registration = () => {
         >
           {loading ? "Registering..." : "Register"}
         </button>
-      </form>
+      </motion.form>
     </div>
   );
 };

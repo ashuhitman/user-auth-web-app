@@ -5,7 +5,7 @@ const auth = async (url, user) => {
 
   try {
     const data = await axios.post(url, user);
-    console.log(data);
+
     res.data = data;
     res.isError = false;
   } catch (error) {

@@ -52,10 +52,17 @@
   color: var(--login-color);
   border-bottom-left-radius: 4px;
 }
+.register-button:hover {
+  color: black;
+}
 .form-buttons .signin-button {
   background-color: #2d3b55;
   color: white;
   border-bottom-right-radius: 4px;
+}
+.signin-button:hover {
+  color: #ffff00;
+  background-color: #2d3b50;
 }
 .forgot-text {
   text-align: center;

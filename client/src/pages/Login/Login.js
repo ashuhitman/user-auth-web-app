@@ -4,6 +4,8 @@ import { useState } from "react";
 import auth from "../../utils/auth";
 import AlertMessage from "../../components/AlertMessage/AlertMessage";
 import { useNavigate } from "react-router-dom";
+import validation from "../../utils/validation";
+import { motion } from "framer-motion";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,25 +22,9 @@ const Login = () => {
       email,
       password,
     };
-    const validationError = {};
-    let isError = false;
-    if (!email) {
-      validationError.email = "Email is required";
-      isError = true;
-    } else if (!/^[a-z0-9.]{1,64}@[a-z0-9.]{1,64}$/i.test(email)) {
-      validationError.email = "Please enter a valid email";
-      isError = true;
-    }
-
-    if (!password) {
-      validationError.password = "Password is required";
-      isError = true;
-    } else if (password.trim().length < 4) {
-      validationError.password = "Pssword must be at least 4 characters";
-      isError = true;
-    }
-    if (isError) {
-      setErr(validationError);
+    const [isValid, errors] = validation(user, "login");
+    if (!isValid) {
+      setErr(errors);
       return;
     }
     setLoading(true);
@@ -46,7 +32,6 @@ const Login = () => {
       "https://user-auth-api-iva0.onrender.com/login",
       user
     );
-    console.log(res);
     setLoading(false);
     setData((pre) => res);
     setShowAlertMessage(true);
@@ -59,7 +44,13 @@ const Login = () => {
       ) : (
         <></>
       )}
-      <form className="login-form" onSubmit={signin}>
+      <motion.form
+        className="login-form"
+        onSubmit={signin}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0 }}
+      >
         <div className="form-heading">Login</div>
         <div className="form-field">
           <input
@@ -100,10 +91,10 @@ const Login = () => {
           </button>
 
           <button type="submit" className="signin-button">
-            {loading ? "signing in..." : "SIGN IN"}
+            {loading ? "Signing in..." : "SIGN IN"}
           </button>
         </div>
-      </form>
+      </motion.form>
     </div>
   );
 };
