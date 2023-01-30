@@ -29,7 +29,7 @@ const Login = () => {
     }
     setLoading(true);
     const res = await auth(
-      "https://user-auth-api-iva0.onrender.com/login",
+      "https://user-auth-web-api.onrender.com/login",
       user
     );
     setLoading(false);

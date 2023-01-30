@@ -53,7 +53,7 @@ const Registration = () => {
       setFormErrors({});
       setLoading(true);
       const res = await auth(
-        "https://user-auth-api-iva0.onrender.com/register",
+        "https://user-auth-web-api.onrender.com/register",
         user
       );
       setLoading(false);
