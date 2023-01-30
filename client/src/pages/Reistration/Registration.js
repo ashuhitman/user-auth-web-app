@@ -59,9 +59,11 @@ const Registration = () => {
       setLoading(false);
       setData(res);
       setShowAlertMessage(true);
-      setTimeout(() => {
-        navigate("/");
-      }, 3000);
+      if (!res.isError) {
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
+      }
     } else {
       setFormErrors(errors);
     }
